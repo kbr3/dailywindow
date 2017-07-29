@@ -9,9 +9,13 @@ day0 = {
     source: 'Philippians 4:7, The Message'
      },
   evening: {
-    text: 'Love is God’s preservative. It surrounds our souls with a power greater than the power of the devil and the world around us. It keeps us balanced; it insulates us against the hostility that exists in our world. Love is the shelter of the Most High; it is the substance of the Place of Immunity.',  
+    text: 'Love is God’s preservative. It surrounds our souls with a power greater than the power of the devil and the world around us. It keeps us balanced; it insulates us against the hostility that exists in our world. Love is the shelter of the Most High; it is the substance of the Place of Immunity.',
     source: 'Francis Frangipane'
   }
+}
+
+alldays = {
+  20170729: day0
 }
 
 // getting the correct question for day of the week
@@ -26,6 +30,7 @@ questions = [
   "What areas of need are difficult for you to admit?"
 ]
 weekday=moment().format('d');
+activeday=moment().format('YYYYMMDD');
 
 q=document.getElementById("question");
 quest=questions[weekday]
@@ -33,12 +38,21 @@ q.innerText=quest;
 
 //
 
-morning=document.getElementById("morning");
-text=morning.getElementsByTagName("blockquote");
-text[0].innerHtml=day0.morning.text + "<br>" + "<em>" + day0.morning.source + "</em>" ;
+
 
 // evening text
 
-evening=document.getElementById("evening");
+
+
+// create a function called "setwindow"
+var setwindow=function(timeofday) {
+evening=document.getElementById(timeofday);
 text=evening.getElementsByTagName("blockquote");
-text[0].innerHtml=day0.evening.text + "<br>" + "<em>" + day0.evening.source + "</em>" ;
+today=alldays[activeday];
+text[0].innerHTML=today[timeofday].text + "<br>" + "<em>" +today[timeofday].source + "</em>" ;
+  };
+
+    setwindow("morning");
+    setwindow("evening");
+
+
