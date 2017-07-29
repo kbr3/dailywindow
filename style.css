@@ -1,0 +1,28 @@
+img {
+  height: 150px;
+}
+#content{
+  width: 500px;
+  padding: 25px;
+    text-align: center;
+  border: 2px solid black;
+    background-color: ;
+}
+#question{
+  font-size: 1.5em;
+  color: darkblue;
+}
+blockquote{
+  width: 80%; 
+  padding-left: 5%;
+}
+.nav{
+  color: blue;
+  text-decoration: bold;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}

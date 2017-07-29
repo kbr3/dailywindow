@@ -1,0 +1,44 @@
+d=document.getElementById("dte");
+now=moment().format('dddd MMMM Do YYYY');
+d.innerText=now;
+
+
+day0 = {
+  morning: {
+    text: 'Before you know it, a sense of God’s wholeness, everything coming together for good, will come and settle you down. It’s wonderful what happens when Christ displaces worry at the center of your life.',
+    source: 'Philippians 4:7, The Message'
+     },
+  evening: {
+    text: 'Love is God’s preservative. It surrounds our souls with a power greater than the power of the devil and the world around us. It keeps us balanced; it insulates us against the hostility that exists in our world. Love is the shelter of the Most High; it is the substance of the Place of Immunity.',  
+    source: 'Francis Frangipane'
+  }
+}
+
+// getting the correct question for day of the week
+
+questions = [
+  "What would help you find rest and value in the LORD?",
+  "What do you want to surrender today – and what do you want to ask for in exchange?",
+  "What would help you be more aware of God’s presence today?",
+  "What reminds you of all the reasons you have to be grateful?",
+  "What is the next step of commitment and action for you to join what God is doing in the world?",
+  "What nagging and persistent habits or patterns do you need to confess?",
+  "What areas of need are difficult for you to admit?"
+]
+weekday=moment().format('d');
+
+q=document.getElementById("question");
+quest=questions[weekday]
+q.innerText=quest;
+
+//
+
+morning=document.getElementById("morning");
+text=morning.getElementsByTagName("blockquote");
+text[0].innerHtml=day0.morning.text + "<br>" + "<em>" + day0.morning.source + "</em>" ;
+
+// evening text
+
+evening=document.getElementById("evening");
+text=evening.getElementsByTagName("blockquote");
+text[0].innerHtml=day0.evening.text + "<br>" + "<em>" + day0.evening.source + "</em>" ;
